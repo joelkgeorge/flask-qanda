@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+</head>
+
+<body>
+    <script src="{{ url_for('static', filename='confetti.js') }}">startConfetti();</script>
+    <header style="position: fixed; top: 0;"><h1 style="text-align: center; color: aliceblue;">Your Result</h1></header>
+    <div class="container">
+        <div class="card">
+            <div class="box">
+                <div class="percent">
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70"></circle>
+                    </svg>
+                    <div class="number">
+                        <h2>{{score}}<span>%</span></h2>
+                    </div>
+                </div>
+                <h2 class="text">Great</h2>
+            </div>
+        </div>
+    </div>
+    <div class="boxes" style="  
+    display: flex;
+    width: 350px;
+    max-height: 400px;
+    overflow: auto;
+  ">
+        <div class="content">
+            <h2 style="color: aliceblue;">Your answer</h2>
+            <p style="color: aliceblue; padding: 5px; text-align: center; z-index: 300;">{{rawtext}}</p>
+        </div>
+    </div>
+    <div style="width: 20px;">
+    </div>
+    <div class="boxes" style="  width: 350px;
+    max-height: 400px;
+    overflow: auto;
+  ">
+        <div class="content">
+            <h2 style="color: aliceblue; text-align: center; z-index: 200;">Correct answer</h2>
+            <p style="color: aliceblue; padding: 5px; text-align: center; z-index: 300; text-align:start;">{{answer}}</p>
+        </div>
+    </div>
+</body>
+
+</html>

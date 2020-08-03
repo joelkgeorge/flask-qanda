@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Question and answering system</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<header>
+    <div class="header">
+        <h2>Question answering system using python</h2>
+    </div>
+</header>
+
+<body oncopy="return false" oncut="return false" onpaste="return false">
+    <div class="splash">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="container">
+        <h2 style="-webkit-user-select: none;">{{ question }}?</h2>
+        <form method="POST" action="/result">
+            <div class="input-field">
+                <input type="text" name="rawtext" required="" autocomplete="off">
+                <label>Please answer the Question!</label>
+                <span></span>
+            </div>
+            <input type="submit" value="Submit" name="" class="btn" />
+
+        </form>
+    </div>
+</body>
+<footer>
+    <div class="footer">
+        <p>Made with <mark class="red">❤</mark> using python by Computer Science students of SNGCS.</p>
+    </div>
+</footer>
+
+</html>
