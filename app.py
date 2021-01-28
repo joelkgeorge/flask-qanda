@@ -4,7 +4,7 @@ import sqlite3 #database
 from flaskwebgui import FlaskUI#webapp generator
 
 #initializing the database 
-connection = sqlite3.connect('Qanda.db')
+connection = sqlite3.connect('static/Qanda.db')
 cursor = connection.cursor()
 
 cursor.execute(
