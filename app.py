@@ -1,7 +1,7 @@
-from flask import Flask, url_for, render_template,request #importing flask for webgui
-import spacy#spacy for Natural Language Processing.
+from flask import Flask, url_for, render_template,request
+import spacy #spacy for Natural Language Processing.
 import sqlite3 #database
-from flaskwebgui import FlaskUI#webapp generator
+
 
 #initializing the database 
 connection = sqlite3.connect('static/Qanda.db')
@@ -19,8 +19,6 @@ answer = data[1]
 #Initializing the flask app
 app = Flask(__name__)
 
-ui = FlaskUI(app)
-ui.maximized
 
     try:
         nlp = spacy.load("en_core_web_md")
@@ -47,4 +45,5 @@ def result():
     else:
         return render_template('resultfail.html',rawtext = rawtext,score = score,answer = answer)
 
-ui.run()
+if __name__ == "__main__":
+    app.run(debug=False,host="0.0.0.0")
