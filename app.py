@@ -22,7 +22,11 @@ app = Flask(__name__)
 ui = FlaskUI(app)
 ui.maximized
 
-nlp = spacy.load("en_core_web_md")
+    try:
+        nlp = spacy.load("en_core_web_md")
+    except: # If not present, we download
+        spacy.cli.download("en_core_web_md")
+        nlp = spacy.load("en_core_web_md")
 
 
 @app.route('/')
